@@ -1,21 +1,52 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Smart College Bell</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="box">
-    <h1>🔔 Smart College Bell</h1>
+  <div class="container">
 
-    <input type="text" id="name" placeholder="Schedule Name">
+    <div class="header">
+      <h1>🔔 Smart College Bell</h1>
+      <p>Wireless Bell Management System</p>
+    </div>
 
-    <input type="time" id="time">
+    <div class="card">
+      <h2>Create Schedule</h2>
+      <input type="text" id="scheduleName" placeholder="Schedule Name (Regular / Exam)">
+      <button onclick="createSchedule()">Create Schedule</button>
+    </div>
 
-    <button onclick="saveData()">Save</button>
+    <div class="card">
+      <h2>Add Bell Time</h2>
 
-    <div id="result"></div>
+      <select id="scheduleSelect"></select>
+
+      <input type="time" id="bellTime">
+
+      <select id="duration">
+        <option value="5">5 Seconds</option>
+        <option value="10">10 Seconds</option>
+        <option value="15">15 Seconds</option>
+      </select>
+
+      <button onclick="addBellTime()">Add Bell Time</button>
+    </div>
+
+    <div class="card">
+      <h2>Schedules</h2>
+      <div id="scheduleList"></div>
+    </div>
+
+    <div class="card">
+      <h2>Bell Timings</h2>
+      <div id="bellList"></div>
+    </div>
+
   </div>
 
   <script src="script.js"></script>
